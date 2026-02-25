@@ -1,15 +1,17 @@
 <!-- ![nlbse 2024](nlbse2024.png) -->
 
+# Based on nlbse2024/issue-report-classification (archived)
+
 # NLBSE'24 Tool Competition on Issue Report Classification
 
 ## Introduction
 
-The issue report classification competition consists of building and testing a set of multi-class classification models 
+The issue report classification competition consists of building and testing a set of multi-class classification models
 to classify issue reports as belonging to one category representing the type of information they convey.
 
-We provide a dataset encompassing 3 thousand labeled issue reports 
-(as bugs, enhancements, and questions) 
-extracted from 5 real open-source projects. 
+We provide a dataset encompassing 3 thousand labeled issue reports
+(as bugs, enhancements, and questions)
+extracted from 5 real open-source projects.
 You are invited to leverage this dataset for evaluating your classification approaches and compare the achieved results against proposed baseline approaches based on Sentence-Transformers.
 
 You must train, tune and evaluate your multi-class classification models using the provided training and test sets.
@@ -59,8 +61,8 @@ Since you will be using our dataset (and possibly one of our notebooks) as well 
 ```bibtex
 @inproceedings{colavito2023few,
   author={Colavito, Giuseppe and Lanubile, Filippo and Novielli, Nicole},
-  booktitle={2023 IEEE/ACM 2nd International Workshop on Natural Language-Based Software Engineering (NLBSE)}, 
-  title={Few-Shot Learning for Issue Report Classification}, 
+  booktitle={2023 IEEE/ACM 2nd International Workshop on Natural Language-Based Software Engineering (NLBSE)},
+  title={Few-Shot Learning for Issue Report Classification},
   year={2023},
   volume={},
   number={},
@@ -74,6 +76,7 @@ Since you will be using our dataset (and possibly one of our notebooks) as well 
 A dataset of 3 thousand publicly-available issue reports is extracted.
 
 Each issue report contains the following information:
+
 - Repository
 - Label
 - Title
@@ -99,7 +102,7 @@ Participants are free to select and transform variables from the training set as
 
 ## Evaluation
 
-Submissions are evaluated based on their class-detection performance over the provided [test set](https://raw.githubusercontent.com/nlbse2024/issue-report-classification/main/data/issues_test.csv?token=GHSAT0AAAAAACG4EVQDKGFUQA2CR27PPS2SZI633MA). 
+Submissions are evaluated based on their class-detection performance over the provided [test set](https://raw.githubusercontent.com/nlbse2024/issue-report-classification/main/data/issues_test.csv?token=GHSAT0AAAAAACG4EVQDKGFUQA2CR27PPS2SZI633MA).
 The classifier should assign one label to an issue. Just like the training set, the test set is balanced.
 
 Participants must evaluate their project classifiers on the test set of the respective project and report the results in their submission.
@@ -109,6 +112,7 @@ Participants must evaluate their project classifiers on the test set of the resp
 Repository classification performance is measured using the F1 score over all the three classes (averaged). Cross-repository performance is measured as the arithmetic mean of the five repository F1 scores.
 
 A submission (i.e., paper) in the tool competition must provide, for each of the 5 repositories and cross-repo:
+
 - Precision, for each class and cross-class average
 - Recall, for each class and cross-class average
 - F1 score, for each class and cross-class average
@@ -127,34 +131,34 @@ Participants are encouraged, but not required, to use the baseline as a template
 
 ### [SetFit](2-Template-SetFit.ipynb)
 
-| Repository            | Label         | Precision | Recall | F1         |
-| --------------------- | ------------- | --------- | ------ | ---------- |
-| facebook/react        | bug           | 0.9048    | 0.9500 | 0.9268     |
-| facebook/react        | feature       | 0.8491    | 0.9000 | 0.8738     |
-| facebook/react        | question      | 0.8652    | 0.7700 | 0.8148     |
-| facebook/react        | average       | 0.8729    | 0.8733 | 0.8718     |
-| | | | | |
-| tensorflow/tensorflow | bug           | 0.9565    | 0.8800 | 0.9167     |
-| tensorflow/tensorflow | feature       | 0.8558    | 0.8900 | 0.8725     |
-| tensorflow/tensorflow | question      | 0.7885    | 0.8200 | 0.8039     |
-| tensorflow/tensorflow | average       | 0.8669    | 0.8633 | 0.8644     |
-| | | | | |
-| microsoft/vscode      | bug           | 0.8485    | 0.8400 | 0.8442     |
-| microsoft/vscode      | feature       | 0.7627    | 0.9000 | 0.8257     |
-| microsoft/vscode      | question      | 0.8916    | 0.7400 | 0.8087     |
-| microsoft/vscode      | average       | 0.8343    | 0.8267 | 0.8262     |
-| | | | | |
-| bitcoin/bitcoin       | bug           | 0.7604    | 0.7300 | 0.7449     |
-| bitcoin/bitcoin       | feature       | 0.8723    | 0.8200 | 0.8454     |
-| bitcoin/bitcoin       | question      | 0.6455    | 0.7100 | 0.6762     |
-| bitcoin/bitcoin       | average       | 0.7594    | 0.7533 | 0.7555     |
-| | | | | |
-| opencv/opencv         | bug           | 0.7619    | 0.8000 | 0.7805     |
-| opencv/opencv         | feature       | 0.8842    | 0.8400 | 0.8615     |
-| opencv/opencv         | question      | 0.8100    | 0.8100 | 0.8100     |
-| opencv/opencv         | average       | 0.8187    | 0.8167 | 0.8173     |
-| | | | | |
-| overall               | bug           | 0.8464    | 0.8400 | 0.8426     |
-| overall               | feature       | 0.8448    | 0.8700 | 0.8558     |
-| overall               | question      | 0.8001    | 0.7700 | 0.7827     |
-| overall               | average       | 0.8305    | 0.8267 | **0.8270** |
+| Repository            | Label    | Precision | Recall | F1         |
+| --------------------- | -------- | --------- | ------ | ---------- |
+| facebook/react        | bug      | 0.9048    | 0.9500 | 0.9268     |
+| facebook/react        | feature  | 0.8491    | 0.9000 | 0.8738     |
+| facebook/react        | question | 0.8652    | 0.7700 | 0.8148     |
+| facebook/react        | average  | 0.8729    | 0.8733 | 0.8718     |
+|                       |          |           |        |            |
+| tensorflow/tensorflow | bug      | 0.9565    | 0.8800 | 0.9167     |
+| tensorflow/tensorflow | feature  | 0.8558    | 0.8900 | 0.8725     |
+| tensorflow/tensorflow | question | 0.7885    | 0.8200 | 0.8039     |
+| tensorflow/tensorflow | average  | 0.8669    | 0.8633 | 0.8644     |
+|                       |          |           |        |            |
+| microsoft/vscode      | bug      | 0.8485    | 0.8400 | 0.8442     |
+| microsoft/vscode      | feature  | 0.7627    | 0.9000 | 0.8257     |
+| microsoft/vscode      | question | 0.8916    | 0.7400 | 0.8087     |
+| microsoft/vscode      | average  | 0.8343    | 0.8267 | 0.8262     |
+|                       |          |           |        |            |
+| bitcoin/bitcoin       | bug      | 0.7604    | 0.7300 | 0.7449     |
+| bitcoin/bitcoin       | feature  | 0.8723    | 0.8200 | 0.8454     |
+| bitcoin/bitcoin       | question | 0.6455    | 0.7100 | 0.6762     |
+| bitcoin/bitcoin       | average  | 0.7594    | 0.7533 | 0.7555     |
+|                       |          |           |        |            |
+| opencv/opencv         | bug      | 0.7619    | 0.8000 | 0.7805     |
+| opencv/opencv         | feature  | 0.8842    | 0.8400 | 0.8615     |
+| opencv/opencv         | question | 0.8100    | 0.8100 | 0.8100     |
+| opencv/opencv         | average  | 0.8187    | 0.8167 | 0.8173     |
+|                       |          |           |        |            |
+| overall               | bug      | 0.8464    | 0.8400 | 0.8426     |
+| overall               | feature  | 0.8448    | 0.8700 | 0.8558     |
+| overall               | question | 0.8001    | 0.7700 | 0.7827     |
+| overall               | average  | 0.8305    | 0.8267 | **0.8270** |
